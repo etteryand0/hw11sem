@@ -1,10 +1,17 @@
-from . import HELLO_TEXT
 from .calculator.__main__ import main as calculator_loop
 
 
 def loop():
     try:
-        print(HELLO_TEXT)
+        print("Добро пожаловать в Персональный помощник!")
+        print("Выберите действие:")
+        print("1. Управление заметками")
+        print("2. Управление задачами")
+        print("3. Управление контактами")
+        print("4. Управление финансовыми записями")
+        print("5. Калькулятор")
+        print("6. Выход")
+
         match int(input()):
             case 1:
                 pass
