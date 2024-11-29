@@ -1,4 +1,5 @@
 from . import HELLO_TEXT
+from .calculator.__main__ import main as calculator_loop
 
 
 def loop():
@@ -14,7 +15,7 @@ def loop():
             case 4:
                 pass
             case 5:
-                pass
+                calculator_loop()
             case 6:
                 return True
             case _:
