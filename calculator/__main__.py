@@ -5,7 +5,7 @@ def main():
     calc = Calculator()
 
     while True:
-        print("\nВыберите операцию:")
+        print("\nКалькулятор:")
         print("1. Сложение")
         print("2. Вычитание")
         print("3. Умножение")
@@ -19,6 +19,7 @@ def main():
 
         if choice not in ["1", "2", "3", "4"]:
             print("Некорректный ввод. Пожалуйста, выберите номер операции от 1 до 5.")
+            break
 
         try:
             num1 = float(input("Введите первое число: "))
