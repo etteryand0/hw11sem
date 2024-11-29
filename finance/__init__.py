@@ -74,7 +74,7 @@ class FinanceManager:
         return sum(record.amount for record in self.records)
 
     def import_records(self, csv_filename):
-        with open(csv_filename, "r") as file:
+        with open(csv_filename, "r", encoding="utf-8") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 self.add_record(
