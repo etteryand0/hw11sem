@@ -3,8 +3,8 @@ import csv
 
 
 class Contact:
-    def __init__(self, contact_id, name, phone=None, email=None):
-        self.id = contact_id
+    def __init__(self, id, name, phone=None, email=None):
+        self.id = id
         self.name = name
         self.phone = phone
         self.email = email
@@ -70,7 +70,7 @@ class ContactManager:
         self.save_contacts()
 
     def import_contacts(self, csv_filename):
-        with open(csv_filename, "r") as file:
+        with open(csv_filename, "r", encoding="utf-8") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 self.add_contact(row.get("name"), row.get("phone"), row.get("email"))
@@ -80,4 +80,10 @@ class ContactManager:
             writer = csv.DictWriter(file, fieldnames=["name", "phone", "email"])
             writer.writeheader()
             for contact in self.contacts:
-                writer.writerow(contact.to_dict())
+                writer.writerow(
+                    {
+                        "name": contact.name,
+                        "phone": contact.phone,
+                        "email": contact.email,
+                    }
+                )
