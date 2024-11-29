@@ -79,7 +79,9 @@ class NoteManager:
 
     def export_notes(self, csv_filename="notes.csv"):
         with open(csv_filename, "w", newline="", encoding="utf-8") as file:
-            writer = csv.DictWriter(file, fieldnames=["title", "content"])
+            writer = csv.DictWriter(
+                file, fieldnames=["id", "title", "content", "timestamp"]
+            )
             writer.writeheader()
             for note in self.notes:
                 writer.writerow(note.to_dict())
