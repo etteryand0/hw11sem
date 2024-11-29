@@ -1,5 +1,6 @@
 from .calculator.__main__ import main as calculator_loop
 from .contacts.__main__ import main as contacts_loop
+from .finance.__main__ import main as finance_loop
 
 
 def loop():
@@ -21,7 +22,7 @@ def loop():
             case 3:
                 contacts_loop()
             case 4:
-                pass
+                finance_loop()
             case 5:
                 calculator_loop()
             case 6:
