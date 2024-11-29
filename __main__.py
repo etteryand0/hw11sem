@@ -1,4 +1,5 @@
 from .calculator.__main__ import main as calculator_loop
+from .contacts.__main__ import main as contacts_loop
 
 
 def loop():
@@ -18,7 +19,7 @@ def loop():
             case 2:
                 pass
             case 3:
-                pass
+                contacts_loop()
             case 4:
                 pass
             case 5:
