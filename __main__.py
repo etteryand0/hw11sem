@@ -2,6 +2,7 @@ from .calculator.__main__ import main as calculator_loop
 from .contacts.__main__ import main as contacts_loop
 from .finance.__main__ import main as finance_loop
 from .tasks.__main__ import main as tasks_loop
+from .notes.__main__ import main as notes_loop
 
 
 def loop():
@@ -17,7 +18,7 @@ def loop():
 
         match int(input()):
             case 1:
-                pass
+                notes_loop()
             case 2:
                 tasks_loop()
             case 3:
